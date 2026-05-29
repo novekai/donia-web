@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
+/* ──────────────────────────── DONIIA DESIGN TOKENS ──────────────────────────── */
+/* Charte basée sur Direction C (Afro Modern Fun) — palette indigo / coral / mango. */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette */
+  --color-indigo: #41087B;
+  --color-indigo-deep: #2A0454;
+  --color-coral: #F4486F;
+  --color-coral-deep: #D62E55;
+  --color-coral-soft: #FBC4D1;
+  --color-pink: #ED4673;
+  --color-mango: #F9A01C;
+  --color-mango-deep: #D9871F;
+  --color-mint: #5DBFA0;
+  --color-plum: #7B278C;
+
+  /* Neutrals */
+  --color-cream: #FDF7F6;
+  --color-bg: #FDF7F6;
+  --color-ink: #2A0F1A;
+  --color-ink-2: #6F4A5A;
+  --color-ink-3: #B59AA5;
+  --color-surface: #FFFFFF;
+
+  /* Gradients */
+  --gradient-coral: linear-gradient(140deg, #F4486F 0%, #D62E55 100%);
+  --gradient-indigo: linear-gradient(160deg, #41087B 0%, #2A0454 100%);
+  --gradient-pink-plum: linear-gradient(140deg, #ED4673 0%, #7B278C 100%);
+  --gradient-hero: linear-gradient(160deg, #F4486F 0%, #7B278C 60%, #41087B 100%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
+
+  --color-brand-indigo: var(--color-indigo);
+  --color-brand-indigo-deep: var(--color-indigo-deep);
+  --color-brand-coral: var(--color-coral);
+  --color-brand-coral-deep: var(--color-coral-deep);
+  --color-brand-coral-soft: var(--color-coral-soft);
+  --color-brand-pink: var(--color-pink);
+  --color-brand-mango: var(--color-mango);
+  --color-brand-mango-deep: var(--color-mango-deep);
+  --color-brand-mint: var(--color-mint);
+  --color-brand-plum: var(--color-plum);
+
+  --color-cream: var(--color-cream);
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-ink-3: var(--color-ink-3);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-bricolage);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Doniia wordmark with italic coral "i" */
+.wordmark {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.wordmark .accent {
+  font-style: italic;
+  color: var(--color-coral);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  cursor: pointer;
+  border: 0;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--gradient-coral);
+  color: #FFF;
+  box-shadow: 0 14px 30px -10px rgba(244, 72, 111, 0.5);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px -10px rgba(244, 72, 111, 0.55);
+}
+.btn-secondary {
+  background: rgba(65, 8, 123, 0.08);
+  color: var(--color-indigo);
+  border: 1px solid rgba(65, 8, 123, 0.18);
+}
+.btn-secondary:hover {
+  background: rgba(65, 8, 123, 0.12);
+}
+.btn-mini {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+/* Container */
+.container-donia {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-donia {
+    padding: 0 2rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Legal documents typography */
+.legal-content h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-indigo);
+}
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+.legal-content h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink);
+}
+.legal-content p {
+  color: var(--color-ink);
+  line-height: 1.7;
+}
+.legal-content ul, .legal-content ol {
+  margin-left: 1.25rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+.legal-content ul li {
+  list-style: disc;
+  margin-bottom: 0.4rem;
+}
+.legal-content ol li {
+  list-style: decimal;
+  margin-bottom: 0.4rem;
+}
+.legal-content strong {
+  color: var(--color-indigo);
+  font-weight: 600;
+}
+.legal-content a {
+  color: var(--color-coral);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-content a:hover {
+  color: var(--color-coral-deep);
+}
+.legal-content .info-box {
+  background: white;
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.legal-content .info-box dl {
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.92rem;
+}
+.legal-content .info-box dt {
+  color: var(--color-ink-2);
+  font-weight: 500;
+}
+.legal-content .info-box dd {
+  color: var(--color-ink);
 }

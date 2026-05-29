@@ -20,21 +20,21 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Doniia — Une carte cadeau, un email, un sourire.",
+  title: "Donia — Une carte cadeau, un email, un sourire.",
   description:
     "Envoie une carte cadeau Mobile Money à un proche, où qu'il soit en Afrique. Anniversaire, Saint-Valentin, condoléances, Bonjour, Je t'aime. Dès 100 FCFA.",
   metadataBase: new URL("https://doniia.com"),
   openGraph: {
-    title: "Doniia — L'amour. Le don. Le partage.",
+    title: "Donia — L'amour. Le don. Le partage.",
     description: "Une carte cadeau, un email, un sourire.",
     url: "https://doniia.com",
-    siteName: "Doniia",
+    siteName: "Donia",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Doniia — L'amour. Le don. Le partage.",
+    title: "Donia — L'amour. Le don. Le partage.",
     description: "Une carte cadeau, un email, un sourire.",
   },
 };

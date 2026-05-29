@@ -368,7 +368,7 @@ export function SectionContact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     type="text"
-                    placeholder="Edwige Hounkpati"
+                    placeholder="Awa Diallo"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/15 text-white placeholder:text-white/40 focus:border-[var(--color-mango)] focus:bg-white/12 outline-none transition"
                   />
@@ -378,7 +378,7 @@ export function SectionContact() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
-                    placeholder="edwige@email.com"
+                    placeholder="awa@email.com"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/15 text-white placeholder:text-white/40 focus:border-[var(--color-mango)] focus:bg-white/12 outline-none transition"
                   />

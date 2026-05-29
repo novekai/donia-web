@@ -18,7 +18,7 @@ export default function CGVPage() {
         </li>
         <li>Siège social : Office 8922, 321-323 High Road, Chadwell Heath, Essex, RM6 6AX, Royaume-Uni.</li>
         <li>DUNS : 234351363.</li>
-        <li>Email : <a href="mailto:contact@doniia.app">contact@doniia.app</a>.</li>
+        <li>Email : <a href="mailto:contact@doniia.com">contact@doniia.com</a>.</li>
       </ul>
 
       <h2>Article 2 — Champ d&rsquo;application</h2>
@@ -151,7 +151,7 @@ export default function CGVPage() {
       </ul>
       <p>
         La demande doit être formulée dans un délai de <strong>30 jours</strong> après l&rsquo;achat,
-        à <a href="mailto:contact@doniia.app">contact@doniia.app</a>, accompagnée des justificatifs
+        à <a href="mailto:contact@doniia.com">contact@doniia.com</a>, accompagnée des justificatifs
         (email de confirmation, capture d&rsquo;écran, etc.).
       </p>
       <h3>10.2 Cas d&rsquo;exclusion</h3>

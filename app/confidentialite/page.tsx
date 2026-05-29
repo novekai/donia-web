@@ -39,7 +39,7 @@ export default function ConfidentialitePage() {
           <dd>Office 8922, 321-323 High Road, Chadwell Heath, Essex, RM6 6AX, Royaume-Uni</dd>
           <dt>Contact RGPD / DPO</dt>
           <dd>
-            <a href="mailto:contact@doniia.app">contact@doniia.app</a>
+            <a href="mailto:contact@doniia.com">contact@doniia.com</a>
           </dd>
         </dl>
       </div>
@@ -186,7 +186,7 @@ export default function ConfidentialitePage() {
       </ul>
       <p>
         Pour exercer vos droits, contactez-nous à :{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>. Une preuve d&rsquo;identité pourra
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>. Une preuve d&rsquo;identité pourra
         vous être demandée. Nous nous engageons à répondre dans un délai d&rsquo;<strong>un mois maximum</strong>.
       </p>
 
@@ -225,7 +225,7 @@ export default function ConfidentialitePage() {
       <ul>
         <li>
           Pour exercer vos droits ou pour toute question :{" "}
-          <a href="mailto:contact@doniia.app">contact@doniia.app</a>
+          <a href="mailto:contact@doniia.com">contact@doniia.com</a>
         </li>
         <li>
           Adresse postale : NOVEKAI LTD, Office 8922, 321-323 High Road, Chadwell Heath, Essex, RM6

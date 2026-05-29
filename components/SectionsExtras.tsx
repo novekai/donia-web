@@ -283,11 +283,29 @@ export function SectionContact() {
   const [subject, setSubject] = useState("Une question générale");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Placeholder — wire to a serverless endpoint in production
-    setSent(true);
+    setError(null);
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(data.error ?? "Envoi impossible");
+      }
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Envoi impossible");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -310,7 +328,7 @@ export function SectionContact() {
 
             <div className="space-y-3 max-w-sm">
               {[
-                { Icon: Mail, label: "EMAIL", value: "hello@doniia.com" },
+                { Icon: Mail, label: "EMAIL", value: "contact@doniia.com" },
                 { Icon: MessageCircle, label: "WHATSAPP BUSINESS", value: "+229 01 51 38 42 98" },
                 { Icon: MapPin, label: "SIÈGE", value: "Cotonou, Bénin" },
               ].map((c) => (
@@ -350,7 +368,7 @@ export function SectionContact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     type="text"
-                    placeholder="Awa Diallo"
+                    placeholder="Edwige Hounkpati"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/15 text-white placeholder:text-white/40 focus:border-[var(--color-mango)] focus:bg-white/12 outline-none transition"
                   />
@@ -360,7 +378,7 @@ export function SectionContact() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
-                    placeholder="awa@email.com"
+                    placeholder="edwige@email.com"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/15 text-white placeholder:text-white/40 focus:border-[var(--color-mango)] focus:bg-white/12 outline-none transition"
                   />
@@ -388,12 +406,18 @@ export function SectionContact() {
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/15 text-white placeholder:text-white/40 focus:border-[var(--color-mango)] focus:bg-white/12 outline-none transition resize-none"
                   />
                 </Field>
+                {error && (
+                  <p className="text-sm text-[#FFB4C2] bg-[#41087B]/40 border border-[#FFB4C2]/30 rounded-xl px-4 py-3">
+                    {error} — réessaie ou écris-nous directement à contact@doniia.com
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl font-semibold text-white transition-transform hover:scale-[1.01]"
+                  disabled={sending}
+                  className="w-full py-3.5 rounded-xl font-semibold text-white transition-transform hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{ background: "var(--gradient-coral)" }}
                 >
-                  Envoyer →
+                  {sending ? "Envoi…" : "Envoyer →"}
                 </button>
               </>
             )}

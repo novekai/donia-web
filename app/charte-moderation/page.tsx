@@ -168,7 +168,7 @@ export default function ChartePage() {
       <h2>7. Droit de recours</h2>
       <p>
         Un utilisateur sanctionné peut contester la décision en écrivant à{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a> dans un délai de{" "}
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a> dans un délai de{" "}
         <strong>30 jours</strong>, en expliquant les raisons de sa contestation. Doniia s&rsquo;engage
         à examiner la demande dans un délai de <strong>14 jours</strong> et à motiver sa réponse.
       </p>
@@ -181,7 +181,7 @@ export default function ChartePage() {
       </p>
       <p>
         Les utilisateurs sont encouragés à partager leurs retours et suggestions à{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a> pour améliorer continuellement la
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a> pour améliorer continuellement la
         modération.
       </p>
 
@@ -202,7 +202,7 @@ export default function ChartePage() {
       <h2>11. Contact</h2>
       <p>
         Pour tout signalement, recours ou question relative à cette Charte :{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>
       </p>
       <p>Date d&rsquo;entrée en vigueur : 16 juin 2026.</p>
     </LegalLayout>

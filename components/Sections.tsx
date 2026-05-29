@@ -33,9 +33,9 @@ const CATALOG = [
 
 const TESTIMONIALS = [
   {
-    who: "Awa Diallo",
+    who: "Edwige Hounkpati",
     loc: "Cotonou, Bénin",
-    initial: "A",
+    initial: "E",
     color: "#F4486F",
     quote: "J'ai entendu parler de Donia par une amie de la diaspora — l'idée d'envoyer un cadeau à ma sœur avec juste son email, ça change tout. J'attends le lancement avec impatience.",
     tag: "En attente du lancement",

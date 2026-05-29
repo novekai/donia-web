@@ -161,7 +161,7 @@ export default function ReglementParrainagePage() {
       <h2>Article 12 — Contact</h2>
       <p>
         Pour toute question relative au programme :{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>
       </p>
       <p>Date d&rsquo;entrée en vigueur : 16 juin 2026.</p>
     </LegalLayout>

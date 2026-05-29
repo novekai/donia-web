@@ -177,7 +177,7 @@ export default function CookiesPage() {
       <h2>7. Contact</h2>
       <p>
         Pour toute question relative aux cookies utilisés par Doniia, vous pouvez nous contacter à :{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>
       </p>
       <p>Date d&rsquo;entrée en vigueur : 16 juin 2026.</p>
     </LegalLayout>

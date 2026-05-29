@@ -89,7 +89,7 @@ export default function CGUPage() {
         <li>Toute connexion via les identifiants de l&rsquo;Utilisateur est réputée effectuée par lui.</li>
         <li>
           L&rsquo;Utilisateur s&rsquo;engage à signaler immédiatement toute utilisation non autorisée à{" "}
-          <a href="mailto:contact@doniia.app">contact@doniia.app</a>.
+          <a href="mailto:contact@doniia.com">contact@doniia.com</a>.
         </li>
       </ul>
 
@@ -177,7 +177,7 @@ export default function CGUPage() {
       <h3>9.1 Résiliation par l&rsquo;Utilisateur</h3>
       <p>
         L&rsquo;Utilisateur peut à tout moment supprimer son compte depuis l&rsquo;application ou par
-        demande écrite à <a href="mailto:contact@doniia.app">contact@doniia.app</a>. La suppression
+        demande écrite à <a href="mailto:contact@doniia.com">contact@doniia.com</a>. La suppression
         entraîne l&rsquo;effacement de ses données personnelles dans les délais prévus par la{" "}
         <a href="/confidentialite">Politique de confidentialité</a>. Le solde non utilisé pourra être
         retiré avant la suppression.
@@ -204,7 +204,7 @@ export default function CGUPage() {
         <a href="/confidentialite">Politique de confidentialité</a> disponible sur doniia.com.
         L&rsquo;Utilisateur dispose des droits d&rsquo;accès, de rectification, de suppression,
         d&rsquo;opposition et de portabilité sur ses données, qu&rsquo;il peut exercer en écrivant à{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>.
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>.
       </p>
 
       <h2>Article 12 — Responsabilité</h2>
@@ -234,7 +234,7 @@ export default function CGUPage() {
       <h2>Article 14 — Contact</h2>
       <p>
         Toute question relative aux CGU peut être adressée à :{" "}
-        <a href="mailto:contact@doniia.app">contact@doniia.app</a>.
+        <a href="mailto:contact@doniia.com">contact@doniia.com</a>.
       </p>
       <p>Date d&rsquo;entrée en vigueur : 16 juin 2026.</p>
     </LegalLayout>

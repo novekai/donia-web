@@ -211,3 +211,16 @@ html {
 .legal-content .info-box dd {
   color: var(--color-ink);
 }
+
+/* Article body (blog post) */
+.article-body p {
+  margin-bottom: 1.2rem;
+  color: var(--color-ink);
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+.article-body p:first-child {
+  font-size: 1.15rem;
+  color: var(--color-ink);
+  font-weight: 500;
+}

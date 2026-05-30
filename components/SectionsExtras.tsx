@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, MapPin, ChevronDown } from "lucide-react";
 
@@ -154,47 +155,54 @@ export function SectionBlog() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {posts.map((p, i) => (
-            <motion.article
+            <motion.div
               key={p.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.1 }}
-              className="bg-white rounded-3xl overflow-hidden border border-[var(--color-line)] hover:-translate-y-1 transition-transform cursor-pointer"
             >
-              <div
-                className="relative aspect-[16/9] flex items-center justify-center text-6xl overflow-hidden"
-                style={{ background: p.color, color: "#FDF7F6" }}
+              <Link
+                href={`/blog/${p.slug}`}
+                className="block bg-white rounded-3xl overflow-hidden border border-[var(--color-line)] hover:-translate-y-1 transition-transform"
               >
-                <svg
-                  className="absolute -top-8 -right-8 opacity-25"
-                  width="160"
-                  height="160"
-                  viewBox="0 0 100 100"
+                <div
+                  className="relative aspect-[16/9] flex items-center justify-center text-6xl overflow-hidden"
+                  style={{ background: p.color, color: "#FDF7F6" }}
                 >
-                  <circle cx="50" cy="50" r="42" stroke="#FDF7F6" strokeWidth="0.8" fill="none" />
-                  <circle cx="50" cy="50" r="28" stroke="#FDF7F6" strokeWidth="0.8" fill="none" />
-                </svg>
-                <span className="relative z-10">{p.emoji}</span>
-              </div>
-              <div className="p-6">
-                <span className="inline-flex text-xs font-bold uppercase tracking-wider text-[var(--color-coral)] bg-[var(--color-coral)]/10 px-3 py-1 rounded-full mb-3">
-                  {p.category}
-                </span>
-                <h3 className="font-display text-lg mb-2 leading-snug tracking-tight">{p.title}</h3>
-                <p className="text-sm text-[var(--color-ink-2)] leading-relaxed mb-4">{p.excerpt}</p>
-                <p className="text-xs italic text-[var(--color-ink-3)]">
-                  {formatBlogDate(p.publishedAt)} · {p.readMinutes} min
-                </p>
-              </div>
-            </motion.article>
+                  <svg
+                    className="absolute -top-8 -right-8 opacity-25"
+                    width="160"
+                    height="160"
+                    viewBox="0 0 100 100"
+                  >
+                    <circle cx="50" cy="50" r="42" stroke="#FDF7F6" strokeWidth="0.8" fill="none" />
+                    <circle cx="50" cy="50" r="28" stroke="#FDF7F6" strokeWidth="0.8" fill="none" />
+                  </svg>
+                  <span className="relative z-10">{p.emoji}</span>
+                </div>
+                <div className="p-6">
+                  <span
+                    className="inline-flex text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
+                    style={{ background: `${p.color}1a`, color: p.color }}
+                  >
+                    {p.category}
+                  </span>
+                  <h3 className="font-display text-lg mb-2 leading-snug tracking-tight">{p.title}</h3>
+                  <p className="text-sm text-[var(--color-ink-2)] leading-relaxed mb-4">{p.excerpt}</p>
+                  <p className="text-xs italic text-[var(--color-ink-3)]">
+                    {formatBlogDate(p.publishedAt)} · {p.readMinutes} min
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="btn btn-secondary">
+          <Link href="/blog" className="btn btn-secondary">
             Voir tous les articles →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

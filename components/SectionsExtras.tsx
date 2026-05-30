@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, MapPin, ChevronDown } from "lucide-react";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://donia-api-production.up.railway.app";
 
 // ─────────────── À PROPOS ───────────────
 
@@ -77,37 +79,69 @@ export function SectionAbout() {
 
 // ─────────────── BLOG ───────────────
 
-const POSTS = [
+type BlogPost = {
+  slug: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  emoji: string;
+  color: string;
+  readMinutes: number;
+  publishedAt: string | null;
+};
+
+const FALLBACK_POSTS: BlogPost[] = [
   {
-    cat: "Conseil",
+    slug: "5-facons-celebrer-anniversaire-distance",
     title: "5 façons de célébrer un anniversaire à distance",
+    category: "Conseil",
     excerpt: "Quand la famille est éparpillée sur 3 continents, la présence prend une autre forme.",
-    date: "24 mai 2026",
-    read: "4 min",
     emoji: "🎂",
     color: "#F4486F",
+    readMinutes: 4,
+    publishedAt: "2026-05-24T00:00:00.000Z",
   },
   {
-    cat: "Témoignage",
+    slug: "awa-cotonou-4-cartes-par-mois",
     title: "Awa, Cotonou : « J'envoie 4 cartes par mois »",
+    category: "Témoignage",
     excerpt: "Portrait d'une utilisatrice qui a transformé sa façon d'être en lien avec ses proches.",
-    date: "20 mai 2026",
-    read: "4 min",
     emoji: "💝",
     color: "#41087B",
+    readMinutes: 4,
+    publishedAt: "2026-05-20T00:00:00.000Z",
   },
   {
-    cat: "Produit",
+    slug: "cartes-tabaski-2026-3-designs-exclusifs",
     title: "Cartes Tabaski 2026 : 3 designs exclusifs",
+    category: "Produit",
     excerpt: "Notre studio a travaillé avec un illustrateur sénégalais. Découvre les coulisses.",
-    date: "15 mai 2026",
-    read: "4 min",
     emoji: "🌙",
     color: "#F9A01C",
+    readMinutes: 4,
+    publishedAt: "2026-05-15T00:00:00.000Z",
   },
 ];
 
 export function SectionBlog() {
+  const [posts, setPosts] = useState<BlogPost[]>(FALLBACK_POSTS);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`${API_URL}/v1/articles?limit=6`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { items?: BlogPost[] } | null) => {
+        if (cancelled || !data?.items?.length) return;
+        setPosts(data.items.slice(0, 3));
+      })
+      .catch(() => {
+        // Keep fallback — the homepage must never look broken.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section id="blog" className="py-24 sm:py-32 bg-white">
       <div className="container-donia">
@@ -119,9 +153,9 @@ export function SectionBlog() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {POSTS.map((p, i) => (
+          {posts.map((p, i) => (
             <motion.article
-              key={p.title}
+              key={p.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -145,12 +179,12 @@ export function SectionBlog() {
               </div>
               <div className="p-6">
                 <span className="inline-flex text-xs font-bold uppercase tracking-wider text-[var(--color-coral)] bg-[var(--color-coral)]/10 px-3 py-1 rounded-full mb-3">
-                  {p.cat}
+                  {p.category}
                 </span>
                 <h3 className="font-display text-lg mb-2 leading-snug tracking-tight">{p.title}</h3>
                 <p className="text-sm text-[var(--color-ink-2)] leading-relaxed mb-4">{p.excerpt}</p>
                 <p className="text-xs italic text-[var(--color-ink-3)]">
-                  {p.date} · {p.read}
+                  {formatBlogDate(p.publishedAt)} · {p.readMinutes} min
                 </p>
               </div>
             </motion.article>
@@ -165,6 +199,11 @@ export function SectionBlog() {
       </div>
     </section>
   );
+}
+
+function formatBlogDate(iso: string | null): string {
+  if (!iso) return "";
+  return new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 }
 
 // ─────────────── FAQ ───────────────

@@ -126,6 +126,10 @@ const FALLBACK_POSTS: BlogPost[] = [
 
 export function SectionBlog() {
   const [posts, setPosts] = useState<BlogPost[]>(FALLBACK_POSTS);
+  // While we use the fallback, the slugs don't exist in the DB → linking
+  // to /blog/[slug] would 404. Track this and disable the links until the
+  // API answers with real posts.
+  const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -134,6 +138,7 @@ export function SectionBlog() {
       .then((data: { items?: BlogPost[] } | null) => {
         if (cancelled || !data?.items?.length) return;
         setPosts(data.items.slice(0, 3));
+        setIsLive(true);
       })
       .catch(() => {
         // Keep fallback — the homepage must never look broken.
@@ -154,18 +159,12 @@ export function SectionBlog() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {posts.map((p, i) => (
-            <motion.div
-              key={p.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.55, delay: i * 0.1 }}
-            >
-              <Link
-                href={`/blog/${p.slug}`}
-                className="block bg-white rounded-3xl overflow-hidden border border-[var(--color-line)] hover:-translate-y-1 transition-transform"
-              >
+          {posts.map((p, i) => {
+            const cardClass =
+              "block bg-white rounded-3xl overflow-hidden border border-[var(--color-line)] transition-transform" +
+              (isLive ? " hover:-translate-y-1 cursor-pointer" : "");
+            const inner = (
+              <>
                 <div
                   className="relative aspect-[16/9] flex items-center justify-center text-6xl overflow-hidden"
                   style={{ background: p.color, color: "#FDF7F6" }}
@@ -194,9 +193,26 @@ export function SectionBlog() {
                     {formatBlogDate(p.publishedAt)} · {p.readMinutes} min
                   </p>
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+              </>
+            );
+            return (
+              <motion.div
+                key={p.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+              >
+                {isLive ? (
+                  <Link href={`/blog/${p.slug}`} className={cardClass}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <div className={cardClass}>{inner}</div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

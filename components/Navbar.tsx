@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
 import { LogoMark } from "./LogoMark";
 
@@ -18,14 +19,22 @@ const LINKS = [
 ] as const;
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolledRaw, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Only the homepage has a hero dark enough to host the transparent navbar.
+  // Every other route (blog, legal, anonymous) is light, so we keep the
+  // contrasted (white) navbar even at scrollY=0.
+  const solidByDefault = pathname !== "/";
+  const scrolled = solidByDefault || scrolledRaw;
 
   useEffect(() => {
+    if (solidByDefault) return;
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solidByDefault]);
 
   return (
     <header

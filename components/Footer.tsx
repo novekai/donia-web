@@ -86,7 +86,7 @@ const SOCIALS = [
 export function Footer() {
   return (
     <footer className="bg-[#1a0830] text-[var(--color-cream)]">
-      <div className="container-donia py-14 grid gap-10 lg:grid-cols-[1.2fr_repeat(4,1fr)]">
+      <div className="container-donia pt-20 pb-14 grid gap-10 lg:grid-cols-[1.2fr_repeat(4,1fr)]">
         {/* Brand block */}
         <div>
           <Link href="/" className="flex items-center gap-2.5 mb-3">

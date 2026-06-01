@@ -6,16 +6,15 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
 import { LogoMark } from "./LogoMark";
 
-// 7 liens c'est beaucoup au viewport ~1000px → on les affiche à partir de xl: (1280px)
-// et entre lg et xl, on n'affiche que les liens principaux.
+// Entre lg (1024px) et xl (1280px), on n'affiche que les liens principaux ;
+// le reste apparaît au-delà.
 const LINKS = [
   { href: "/#why", label: "Pourquoi", showAt: "xl" },
   { href: "/#how", label: "Comment ça marche", showAt: "xl" },
-  { href: "/#demo", label: "Démo", showAt: "lg" },
   { href: "/#catalog", label: "Catalogue", showAt: "lg" },
   { href: "/#events", label: "Événements", showAt: "xl" },
   { href: "/#referral", label: "Parrainage", showAt: "lg" },
-  { href: "/#faq", label: "FAQ", showAt: "lg" },
+  { href: "/blog", label: "Blog", showAt: "lg" },
 ] as const;
 
 export function Navbar() {

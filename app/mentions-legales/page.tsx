@@ -38,7 +38,7 @@ export default function MentionsLegalesPage() {
             <a href="mailto:contact@doniia.com">contact@doniia.com</a>
           </dd>
           <dt>Téléphones</dt>
-          <dd>+229 01 62 44 00 72 / +229 01 51 38 42 98</dd>
+          <dd>+229 01 62 44 00 72 / +229 01 69 94 94 81</dd>
           <dt>Site web</dt>
           <dd>
             <a href="https://doniia.com">https://doniia.com</a>
@@ -139,7 +139,7 @@ export default function MentionsLegalesPage() {
         <li>
           Par email : <a href="mailto:contact@doniia.com">contact@doniia.com</a>
         </li>
-        <li>Par téléphone : +229 01 62 44 00 72 / +229 01 51 38 42 98</li>
+        <li>Par téléphone : +229 01 62 44 00 72 / +229 01 69 94 94 81</li>
         <li>
           Par courrier : NOVEKAI LTD, Office 8922, 321-323 High Road, Chadwell Heath, Essex, RM6 6AX,
           Royaume-Uni

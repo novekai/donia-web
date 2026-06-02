@@ -392,7 +392,7 @@ export function SectionContact() {
             <div className="space-y-3 max-w-sm">
               {[
                 { Icon: Mail, label: "EMAIL", value: "contact@doniia.com" },
-                { Icon: MessageCircle, label: "WHATSAPP BUSINESS", value: "+229 01 51 38 42 98" },
+                { Icon: MessageCircle, label: "WHATSAPP BUSINESS", value: "+229 01 69 94 94 81" },
                 { Icon: MapPin, label: "SIÈGE", value: "Cotonou, Bénin" },
               ].map((c) => (
                 <div

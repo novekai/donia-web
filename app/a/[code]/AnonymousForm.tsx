@@ -15,9 +15,36 @@ type Props = {
 
 const MAX_MESSAGE = 500;
 
+type ContactMode = "email" | "whatsapp";
+
+function normalizeWhatsApp(raw: string): string | null {
+  // Accepte +229..., 229..., 0022997..., 90... (suppose BJ par defaut si pas dindicatif).
+  // Renvoie E.164 ou null si invalide.
+  const cleaned = raw.replace(/[^\d+]/g, "");
+  if (!cleaned) return null;
+  let e164 = cleaned;
+  if (e164.startsWith("00")) e164 = `+${e164.slice(2)}`;
+  if (!e164.startsWith("+")) {
+    // Si pas dindicatif, on assume Benin
+    if (e164.length === 8 || e164.length === 10) e164 = `+229${e164}`;
+    else e164 = `+${e164}`;
+  }
+  // Strip le 01 BJ pour aligner avec le backend WAHA
+  if (e164.startsWith("+229")) {
+    const local = e164.slice(4).replace(/\D/g, "");
+    if (local.startsWith("01") && local.length === 10) {
+      e164 = `+229${local.slice(2)}`;
+    }
+  }
+  if (!/^\+\d{8,15}$/.test(e164)) return null;
+  return e164;
+}
+
 export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: Props) {
   const [content, setContent] = useState("");
+  const [contactMode, setContactMode] = useState<ContactMode>("whatsapp");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [marketingOptIn, setMarketingOptIn] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
@@ -25,7 +52,11 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
   const prefersReducedMotion = useReducedMotion();
 
   const initial = firstName[0]?.toUpperCase() ?? "?";
-  const canSubmit = content.trim().length > 0 && content.length <= MAX_MESSAGE && !submitting;
+  const emailValid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim());
+  const phoneE164 = normalizeWhatsApp(phone);
+  const contactValid = contactMode === "email" ? emailValid : Boolean(phoneE164);
+  const canSubmit =
+    content.trim().length > 0 && content.length <= MAX_MESSAGE && contactValid && !submitting;
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -37,7 +68,8 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
         content: content.trim(),
         marketingOptIn,
       };
-      if (email.trim()) body.senderEmail = email.trim();
+      if (contactMode === "email") body.senderEmail = email.trim();
+      else if (phoneE164) body.senderPhone = phoneE164;
 
       const res = await fetch(`${apiBase}/v1/public/anonymes/${code}/message`, {
         method: "POST",
@@ -59,6 +91,8 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
   function reset() {
     setContent("");
     setEmail("");
+    setPhone("");
+    setContactMode("whatsapp");
     setMarketingOptIn(true);
     setSent(false);
     setError(null);
@@ -156,51 +190,96 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
                   </div>
                 </div>
 
-                {/* Optional email capture (Cercle) */}
+                {/* Capture obligatoire : email OU WhatsApp (toggle) */}
                 <div>
-                  <label className="block text-sm font-medium text-[var(--color-ink-2)] mb-1">
-                    Ton email <span className="text-[var(--color-ink-3)] font-normal">(optionnel)</span>
+                  <label className="block text-sm font-medium text-[var(--color-ink-2)] mb-2">
+                    Tes coordonnées <span className="text-[var(--color-coral)]">*</span>
                   </label>
-                  <div className="relative">
-                    <Mail
-                      size={16}
-                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--color-ink-3)]"
-                    />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="ton@email.com"
-                      className="w-full pl-10 pr-4 py-3 rounded-2xl border-2 border-[var(--color-line)] focus:border-[var(--color-indigo)] focus:ring-4 focus:ring-[var(--color-indigo)]/15 outline-none transition"
-                    />
+
+                  {/* Toggle WhatsApp / Email */}
+                  <div className="flex gap-2 p-1 rounded-2xl bg-[var(--color-line)]/40 mb-3">
+                    <button
+                      type="button"
+                      onClick={() => setContactMode("whatsapp")}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium transition ${
+                        contactMode === "whatsapp"
+                          ? "bg-white text-[var(--color-ink)] shadow-sm"
+                          : "text-[var(--color-ink-2)] hover:text-[var(--color-ink)]"
+                      }`}
+                    >
+                      <Smartphone size={15} /> WhatsApp
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setContactMode("email")}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium transition ${
+                        contactMode === "email"
+                          ? "bg-white text-[var(--color-ink)] shadow-sm"
+                          : "text-[var(--color-ink-2)] hover:text-[var(--color-ink)]"
+                      }`}
+                    >
+                      <Mail size={15} /> Email
+                    </button>
                   </div>
+
+                  {/* Champ selon le mode */}
+                  {contactMode === "whatsapp" ? (
+                    <div className="relative">
+                      <Smartphone
+                        size={16}
+                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--color-ink-3)]"
+                      />
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+229 90 12 34 56"
+                        required
+                        className="w-full pl-10 pr-4 py-3 rounded-2xl border-2 border-[var(--color-line)] focus:border-[var(--color-indigo)] focus:ring-4 focus:ring-[var(--color-indigo)]/15 outline-none transition"
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative">
+                      <Mail
+                        size={16}
+                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--color-ink-3)]"
+                      />
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="ton@email.com"
+                        required
+                        className="w-full pl-10 pr-4 py-3 rounded-2xl border-2 border-[var(--color-line)] focus:border-[var(--color-indigo)] focus:ring-4 focus:ring-[var(--color-indigo)]/15 outline-none transition"
+                      />
+                    </div>
+                  )}
+
                   <p className="text-xs text-[var(--color-ink-3)] mt-2 leading-relaxed">
                     Pour recevoir une notification quand l&rsquo;anniversaire de{" "}
                     <strong className="text-[var(--color-ink-2)]">{firstName}</strong> arrive et lui
                     offrir un cadeau. Ton identité reste anonyme côté message.
                   </p>
 
-                  {email.trim().length > 0 && (
-                    <label className="flex items-start gap-2.5 mt-3 text-xs text-[var(--color-ink-2)] cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={marketingOptIn}
-                        onChange={(e) => setMarketingOptIn(e.target.checked)}
-                        className="mt-0.5 w-4 h-4 rounded accent-[var(--color-coral)]"
-                      />
-                      <span>
-                        J&rsquo;accepte que Doniia conserve mon email pour me notifier des occasions
-                        spéciales de {firstName}. Je peux me désabonner à tout moment.{" "}
-                        <Link
-                          href="/confidentialite"
-                          className="underline underline-offset-2 hover:text-[var(--color-coral)]"
-                        >
-                          En savoir plus
-                        </Link>
-                        .
-                      </span>
-                    </label>
-                  )}
+                  <label className="flex items-start gap-2.5 mt-3 text-xs text-[var(--color-ink-2)] cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={marketingOptIn}
+                      onChange={(e) => setMarketingOptIn(e.target.checked)}
+                      className="mt-0.5 w-4 h-4 rounded accent-[var(--color-coral)]"
+                    />
+                    <span>
+                      J&rsquo;accepte que Doniia conserve mes coordonnées pour me notifier des
+                      occasions spéciales de {firstName}. Je peux me désabonner à tout moment.{" "}
+                      <Link
+                        href="/confidentialite"
+                        className="underline underline-offset-2 hover:text-[var(--color-coral)]"
+                      >
+                        En savoir plus
+                      </Link>
+                      .
+                    </span>
+                  </label>
                 </div>
 
                 {/* Error display */}

@@ -54,12 +54,10 @@ export const metadata: Metadata = {
   // chaque page depuis son chemin. Mettre `canonical: '/'` faisait pointer toutes
   // les sous-pages (/cgu, /cgv...) vers la homepage → Google les marquait Duplicata.
   icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/logo-donia-512.png", sizes: "512x512", type: "image/png" },
-    ],
+    // icon.svg sert de favicon principal (carre, scalable, parfait pour Google)
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     shortcut: "/icon.svg",
-    apple: "/logo-donia-512.png",
+    apple: "/icon.svg",
   },
   openGraph: {
     title: "Donia — L'amour. Le don. Le partage.",

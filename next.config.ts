@@ -5,29 +5,18 @@ const nextConfig: NextConfig = {
   // évite les "Duplicata" dans Google Search Console.
   trailingSlash: false,
 
-  // Redirects 301 permanents : permettent a Google de transferer le "juice" SEO
-  // des anciennes URLs vers les nouvelles, et de sortir les 404 de l'index.
+  // Redirects 301 permanents pour les anciennes URLs (404 historiques).
+  // NOTE : on NE redirige PAS www -> apex ici, Vercel le fait au niveau du domaine
+  // (sinon double redirect -> ERR_TOO_MANY_REDIRECTS).
   async redirects() {
     return [
-      // 1. WWW vers apex (canonical doniia.com)
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.doniia.com",
-          },
-        ],
-        destination: "https://doniia.com/:path*",
-        permanent: true,
-      },
-      // 2. Vieille convention HTML statique
+      // Vieille convention HTML statique
       {
         source: "/index.html",
         destination: "/",
         permanent: true,
       },
-      // 3. URL jamais existee (404 historique) -> homepage
+      // URL jamais existee (404 historique) -> homepage
       {
         source: "/store",
         destination: "/",

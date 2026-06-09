@@ -63,7 +63,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Doniia wordmark with italic coral "i" */
+/* Donia wordmark with italic coral "i" */
 .wordmark {
   font-family: var(--font-fraunces), Georgia, serif;
   font-weight: 500;

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Politique de cookies — Doniia",
-  description: "Quels cookies et traceurs Doniia utilise, comment les accepter, refuser ou paramétrer.",
+  title: "Politique de cookies — Donia",
+  description: "Quels cookies et traceurs Donia utilise, comment les accepter, refuser ou paramétrer.",
 };
 
 export default function CookiesPage() {
@@ -17,12 +17,12 @@ export default function CookiesPage() {
         (préférences, identifiant de session, statistiques d&rsquo;usage, etc.).
       </p>
       <p>
-        La présente Politique décrit les cookies et traceurs utilisés par Doniia, leurs finalités,
+        La présente Politique décrit les cookies et traceurs utilisés par Donia, leurs finalités,
         leur durée de conservation, ainsi que les moyens dont vous disposez pour les accepter, les
         refuser ou les paramétrer.
       </p>
 
-      <h2>2. Cookies utilisés par Doniia</h2>
+      <h2>2. Cookies utilisés par Donia</h2>
       <h3>2.1 Cookies techniques et fonctionnels (nécessaires)</h3>
       <p>
         Ces cookies sont indispensables au bon fonctionnement du Service. Ils permettent
@@ -42,7 +42,7 @@ export default function CookiesPage() {
       </p>
 
       <h2>3. Liste détaillée des cookies</h2>
-      <p>Le tableau suivant détaille les principaux cookies utilisés par Doniia :</p>
+      <p>Le tableau suivant détaille les principaux cookies utilisés par Donia :</p>
       <div className="overflow-x-auto -mx-2">
         <table className="w-full text-sm my-4">
           <thead>
@@ -57,35 +57,35 @@ export default function CookiesPage() {
           <tbody className="[&_tr]:border-b [&_tr]:border-[var(--color-line)] [&_td]:px-3 [&_td]:py-2 [&_td]:align-top">
             <tr>
               <td><code>doniia_session</code></td>
-              <td>Doniia</td>
+              <td>Donia</td>
               <td>Technique</td>
               <td>Maintien de la session utilisateur</td>
               <td>Session</td>
             </tr>
             <tr>
               <td><code>doniia_csrf</code></td>
-              <td>Doniia</td>
+              <td>Donia</td>
               <td>Technique</td>
               <td>Protection contre les attaques CSRF</td>
               <td>Session</td>
             </tr>
             <tr>
               <td><code>doniia_cookie_consent</code></td>
-              <td>Doniia</td>
+              <td>Donia</td>
               <td>Technique</td>
               <td>Mémorisation des préférences cookies</td>
               <td>12 mois</td>
             </tr>
             <tr>
               <td><code>doniia_lang</code></td>
-              <td>Doniia</td>
+              <td>Donia</td>
               <td>Fonctionnel</td>
               <td>Mémorisation de la langue choisie</td>
               <td>12 mois</td>
             </tr>
             <tr>
               <td><code>doniia_theme</code></td>
-              <td>Doniia</td>
+              <td>Donia</td>
               <td>Fonctionnel</td>
               <td>Mémorisation du thème (clair / sombre)</td>
               <td>12 mois</td>
@@ -101,7 +101,7 @@ export default function CookiesPage() {
               <td><code>_fbp</code></td>
               <td>Meta</td>
               <td>Marketing (optionnel)</td>
-              <td>Suivi des conversions des campagnes Doniia</td>
+              <td>Suivi des conversions des campagnes Donia</td>
               <td>3 mois</td>
             </tr>
             <tr>
@@ -176,7 +176,7 @@ export default function CookiesPage() {
 
       <h2>7. Contact</h2>
       <p>
-        Pour toute question relative aux cookies utilisés par Doniia, vous pouvez nous contacter à :{" "}
+        Pour toute question relative aux cookies utilisés par Donia, vous pouvez nous contacter à :{" "}
         <a href="mailto:contact@doniia.com">contact@doniia.com</a>
       </p>
       <p>Date d&rsquo;entrée en vigueur : 16 juin 2026.</p>

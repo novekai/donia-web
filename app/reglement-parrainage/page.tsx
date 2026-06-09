@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Règlement du programme de parrainage — Doniia",
+  title: "Règlement du programme de parrainage — Donia",
   description: "Programme « Gagnez 1 % à vie » : conditions, mécanisme, récompenses, mécanismes anti-fraude.",
 };
 
@@ -14,7 +14,7 @@ export default function ReglementParrainagePage() {
     >
       <h2>Préambule</h2>
       <p>
-        Le programme de parrainage Doniia récompense les utilisateurs qui font connaître le Service à
+        Le programme de parrainage Donia récompense les utilisateurs qui font connaître le Service à
         leurs proches. Le présent Règlement décrit les conditions, le mécanisme, les récompenses, et
         les règles applicables au programme « <strong>Gagnez 1 % à vie</strong> ».
       </p>
@@ -22,22 +22,22 @@ export default function ReglementParrainagePage() {
       <h2>Article 1 — Organisateur</h2>
       <p>
         Le programme de parrainage est organisé par <strong>NOVEKAI LTD</strong>, éditrice du service
-        Doniia, immatriculée à Companies House sous le numéro 16853666.
+        Donia, immatriculée à Companies House sous le numéro 16853666.
       </p>
 
       <h2>Article 2 — Conditions de participation</h2>
       <h3>2.1 Le parrain</h3>
       <ul>
-        <li>Être titulaire d&rsquo;un compte Doniia actif et conforme aux <a href="/cgu">CGU</a>.</li>
+        <li>Être titulaire d&rsquo;un compte Donia actif et conforme aux <a href="/cgu">CGU</a>.</li>
         <li>
           Être âgé d&rsquo;au moins 18 ans pour percevoir des récompenses (les mineurs peuvent
           parrainer mais les sommes sont créditées sur le compte du représentant légal).
         </li>
-        <li>Disposer d&rsquo;un code de parrainage personnel attribué automatiquement par Doniia.</li>
+        <li>Disposer d&rsquo;un code de parrainage personnel attribué automatiquement par Donia.</li>
       </ul>
       <h3>2.2 Le filleul</h3>
       <ul>
-        <li>Être une nouvelle personne, n&rsquo;ayant jamais créé de compte Doniia.</li>
+        <li>Être une nouvelle personne, n&rsquo;ayant jamais créé de compte Donia.</li>
         <li>Utiliser le code de parrainage du parrain lors de l&rsquo;inscription ou de la première transaction.</li>
         <li>Réaliser une première transaction validée (achat de carte).</li>
       </ul>
@@ -48,7 +48,7 @@ export default function ReglementParrainagePage() {
         Lors de la première transaction du filleul, un bonus de bienvenue de <strong>500 FCFA</strong>{" "}
         peut être crédité sur le compte du parrain, dans les conditions définies au moment de
         l&rsquo;inscription du filleul. Cette récompense peut être temporairement suspendue ou
-        modifiée par Doniia, sans constituer un droit acquis.
+        modifiée par Donia, sans constituer un droit acquis.
       </p>
       <h3>3.2 Récompense à vie : 1 % de commission</h3>
       <p>
@@ -66,12 +66,12 @@ export default function ReglementParrainagePage() {
       <h2>Article 4 — Versement des récompenses</h2>
       <h3>4.1 Créditation</h3>
       <p>
-        Les récompenses sont automatiquement créditées sur le solde Doniia du parrain dans un délai
+        Les récompenses sont automatiquement créditées sur le solde Donia du parrain dans un délai
         de <strong>24 à 72 heures</strong> après validation de la transaction du filleul.
       </p>
       <h3>4.2 Utilisation des récompenses</h3>
       <ul>
-        <li>Achat de cartes cadeaux sur Doniia (sans frais supplémentaires).</li>
+        <li>Achat de cartes cadeaux sur Donia (sans frais supplémentaires).</li>
         <li>Retrait via Mobile Money grâce à FedaPay (frais de retrait habituels).</li>
       </ul>
       <h3>4.3 Suivi</h3>
@@ -84,7 +84,7 @@ export default function ReglementParrainagePage() {
       <h2>Article 5 — Mécanisme anti-fraude</h2>
       <h3>5.1 Détection</h3>
       <p>
-        Doniia met en œuvre des mécanismes automatiques de détection des fraudes : création de
+        Donia met en œuvre des mécanismes automatiques de détection des fraudes : création de
         comptes multiples par une même personne, utilisation de moyens de paiement identiques,
         comportements suspects de transaction, géographies improbables, etc.
       </p>
@@ -125,12 +125,12 @@ export default function ReglementParrainagePage() {
         <li>Pas de spam ni de message non sollicité.</li>
         <li>Pas d&rsquo;inscription fictive ni de comportement frauduleux.</li>
         <li>Pas de publicité trompeuse sur les avantages du Service.</li>
-        <li>Pas d&rsquo;utilisation de la marque Doniia hors du cadre défini par les CGU.</li>
+        <li>Pas d&rsquo;utilisation de la marque Donia hors du cadre défini par les CGU.</li>
       </ul>
 
       <h2>Article 8 — Modifications et arrêt du programme</h2>
       <p>
-        Doniia se réserve le droit de modifier les règles du programme (notamment le taux de
+        Donia se réserve le droit de modifier les règles du programme (notamment le taux de
         commission), de le suspendre ou d&rsquo;y mettre fin à tout moment. Toute modification
         substantielle sera notifiée aux parrains avec un préavis de <strong>30 jours minimum</strong>,
         et n&rsquo;aura pas d&rsquo;effet rétroactif sur les commissions déjà générées.
@@ -147,7 +147,7 @@ export default function ReglementParrainagePage() {
       <h2>Article 10 — Données personnelles</h2>
       <p>
         Les données liées au programme de parrainage (identité du parrain, du filleul, statistiques)
-        sont traitées conformément à la <a href="/confidentialite">Politique de confidentialité Doniia</a>.
+        sont traitées conformément à la <a href="/confidentialite">Politique de confidentialité Donia</a>.
         Aucune information nominative du filleul n&rsquo;est partagée avec le parrain (seul un
         compteur de filleuls et le montant cumulé des récompenses est affiché).
       </p>

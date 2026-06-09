@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
   const { code } = await params;
   const data = await fetchRecipient(code);
   if (!data) {
-    return { title: "Lien anonyme introuvable — Doniia" };
+    return { title: "Lien anonyme introuvable — Donia" };
   }
   const name = data.link.recipient.firstName;
   return {
-    title: `Envoie un message anonyme à ${name} — Doniia`,
+    title: `Envoie un message anonyme à ${name} — Donia`,
     description: data.link.prompt,
     openGraph: {
       title: `Envoie un message anonyme à ${name} ✨`,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
           url: "/og-anonymes.png",
           width: 1200,
           height: 630,
-          alt: "Doniia — Messages anonymes",
+          alt: "Donia — Messages anonymes",
         },
       ],
     },

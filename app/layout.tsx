@@ -20,15 +20,16 @@ const bricolage = Bricolage_Grotesque({
   display: "swap",
 });
 
-// SEO : on cible deliberement les 2 orthographes ("Donia" courant + "Doniia" du nom legal)
-// pour que Google indexe le site pour les 2 mots-cles.
+// SEO : la marque s'écrit "Donia" (1 i). Le domaine est doniia.com (2 i) — gardé
+// comme URL pour matcher les recherches contenant le domaine, sans le promouvoir
+// comme nom alternatif.
 export const metadata: Metadata = {
-  title: "Donia (Doniia) — Cartes cadeaux Mobile Money pour l'Afrique",
+  title: "Donia — Cartes cadeaux Mobile Money pour l'Afrique",
   description:
-    "Donia (doniia.com) : envoie une carte cadeau Mobile Money à un proche partout en Afrique. Anniversaire, Saint-Valentin, condoléances, Bonjour, Je t'aime. Dès 100 FCFA. MTN, Moov, Orange, Wave.",
+    "Donia : envoie une carte cadeau Mobile Money à un proche partout en Afrique. Anniversaire, Saint-Valentin, condoléances, Bonjour, Je t'aime. Dès 100 FCFA. MTN, Moov, Orange, Wave. doniia.com",
   keywords: [
     "Donia",
-    "Doniia",
+    "Donia app",
     "doniia.com",
     "carte cadeau mobile money",
     "cadeau Afrique",
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
   creator: "NOVEKAI LTD",
   publisher: "NOVEKAI LTD",
   metadataBase: new URL("https://doniia.com"),
-  alternates: {
-    canonical: "/",
-  },
+  // Pas de canonical fixe ici : Next.js dérive automatiquement le canonical de
+  // chaque page depuis son chemin. Mettre `canonical: '/'` faisait pointer toutes
+  // les sous-pages (/cgu, /cgv...) vers la homepage → Google les marquait Duplicata.
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Donia — L'amour. Le don. Le partage.",
     description:
-      "Donia (doniia.com) : envoie une carte cadeau Mobile Money à un proche partout en Afrique. Dès 100 FCFA via MTN, Moov, Orange, Wave.",
+      "Donia : envoie une carte cadeau Mobile Money à un proche partout en Afrique. Dès 100 FCFA via MTN, Moov, Orange, Wave. doniia.com",
     url: "https://doniia.com",
     siteName: "Donia",
     locale: "fr_FR",
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Donia — L'amour. Le don. Le partage.",
-    description: "Une carte cadeau Mobile Money, un sourire. Dès 100 FCFA. Donia (doniia.com)",
+    description: "Une carte cadeau Mobile Money, un sourire. Dès 100 FCFA. Donia · doniia.com",
     images: ["/logo-donia-512.png"],
   },
   robots: {
@@ -101,7 +102,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Donia",
-  alternateName: ["Doniia", "Donia App", "doniia.com"],
+  alternateName: ["Donia App", "doniia.com"],
   url: "https://doniia.com",
   logo: "https://doniia.com/logo-donia-512.png",
   image: "https://doniia.com/logo-donia-512.png",
@@ -138,7 +139,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Donia",
-  alternateName: "Doniia",
+  alternateName: "Donia App",
   url: "https://doniia.com",
   potentialAction: {
     "@type": "SearchAction",
@@ -157,7 +158,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${bricolage.variable} antialiased`}
     >
       <head>
-        {/* Structured data Schema.org — apparition logo dans Google + matching Donia/Doniia */}
+        {/* Structured data Schema.org — apparition logo dans Google + signaux marque Donia */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

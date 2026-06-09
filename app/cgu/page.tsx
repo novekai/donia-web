@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales d'Utilisation — Doniia",
-  description: "CGU du service Doniia opéré par NOVEKAI LTD. Règles d'usage de l'application et du site.",
+  title: "Conditions Générales d'Utilisation — Donia",
+  description: "CGU du service Donia opéré par NOVEKAI LTD. Règles d'usage de l'application et du site.",
 };
 
 export default function CGUPage() {
@@ -12,7 +12,7 @@ export default function CGUPage() {
       <h2>Préambule</h2>
       <p>
         Les présentes Conditions Générales d&rsquo;Utilisation (ci-après les <strong>CGU</strong>)
-        régissent l&rsquo;utilisation du service Doniia, édité par la société NOVEKAI LTD, ainsi que de
+        régissent l&rsquo;utilisation du service Donia, édité par la société NOVEKAI LTD, ainsi que de
         tous ses prolongements (site web, application mobile, messages anonymes, programme de
         parrainage, fonctionnalité Fêtes, etc.).
       </p>
@@ -25,20 +25,20 @@ export default function CGUPage() {
       <ul>
         <li>
           <strong>Service</strong> : l&rsquo;ensemble des fonctionnalités accessibles via le site
-          doniia.com et l&rsquo;application mobile Doniia.
+          doniia.com et l&rsquo;application mobile Donia.
         </li>
         <li>
           <strong>Éditeur</strong> : la société NOVEKAI LTD, éditrice et exploitante du Service.
         </li>
         <li>
-          <strong>Utilisateur</strong> : toute personne physique disposant d&rsquo;un compte Doniia.
+          <strong>Utilisateur</strong> : toute personne physique disposant d&rsquo;un compte Donia.
         </li>
         <li>
           <strong>Visiteur</strong> : toute personne accédant au site sans nécessairement disposer
           d&rsquo;un compte.
         </li>
         <li>
-          <strong>Carte</strong> : une carte cadeau numérique achetée et envoyée via Doniia.
+          <strong>Carte</strong> : une carte cadeau numérique achetée et envoyée via Donia.
         </li>
         <li>
           <strong>Solde</strong> : montant en FCFA disponible sur le compte de l&rsquo;Utilisateur,
@@ -60,7 +60,7 @@ export default function CGUPage() {
 
       <h2>Article 2 — Objet</h2>
       <p>
-        Doniia est un service de partage de cartes cadeaux numériques permettant aux Utilisateurs :
+        Donia est un service de partage de cartes cadeaux numériques permettant aux Utilisateurs :
         d&rsquo;acheter et d&rsquo;envoyer des cartes à des proches via e-mail, d&rsquo;en recevoir et
         de les convertir en solde monétaire, de retirer ce solde via Mobile Money, de recevoir des
         messages anonymes via un Lien anonyme partageable, et de découvrir les utilisateurs en fête
@@ -96,7 +96,7 @@ export default function CGUPage() {
       <h2>Article 5 — Services proposés</h2>
       <h3>5.1 Cartes cadeaux</h3>
       <p>
-        L&rsquo;Utilisateur peut acheter des cartes cadeaux dans le catalogue Doniia et les envoyer à
+        L&rsquo;Utilisateur peut acheter des cartes cadeaux dans le catalogue Donia et les envoyer à
         un destinataire identifié par son adresse e-mail. Le destinataire peut convertir la carte en
         solde monétaire (FCFA), puis retirer ce solde via Mobile Money par l&rsquo;intermédiaire de
         FedaPay.
@@ -117,7 +117,7 @@ export default function CGUPage() {
       <h3>5.4 Parrainage</h3>
       <p>
         Les Utilisateurs peuvent parrainer leurs proches via un code unique, en accord avec le{" "}
-        <a href="/reglement-parrainage">Règlement du programme de parrainage</a> Doniia disponible
+        <a href="/reglement-parrainage">Règlement du programme de parrainage</a> Donia disponible
         séparément.
       </p>
 
@@ -145,10 +145,10 @@ export default function CGUPage() {
 
       <h2>Article 7 — Modération</h2>
       <p>
-        Doniia applique une politique de modération active : les messages anonymes, les photos de
+        Donia applique une politique de modération active : les messages anonymes, les photos de
         profil et tout contenu publié sur le Service peuvent être analysés par des outils automatisés
         et examinés par l&rsquo;équipe de modération. Les règles détaillées figurent dans la{" "}
-        <a href="/charte-moderation">Charte de modération Doniia</a>.
+        <a href="/charte-moderation">Charte de modération Donia</a>.
       </p>
       <p>
         Tout contenu jugé contraire aux CGU ou à la Charte de modération pourra être supprimé sans
@@ -158,7 +158,7 @@ export default function CGUPage() {
       <h2>Article 8 — Paiements et solde</h2>
       <h3>8.1 Paiements</h3>
       <p>
-        Les paiements pour l&rsquo;achat de cartes sont effectués via FedaPay. Doniia ne stocke
+        Les paiements pour l&rsquo;achat de cartes sont effectués via FedaPay. Donia ne stocke
         aucune donnée bancaire complète. Les paiements sont sécurisés par les protocoles de FedaPay.
       </p>
       <h3>8.2 Solde et retraits</h3>
@@ -169,7 +169,7 @@ export default function CGUPage() {
       </p>
       <p>
         Le solde n&rsquo;est pas rémunéré, ne porte pas intérêt et ne constitue pas un dépôt bancaire
-        au sens réglementaire. Doniia agit comme intermédiaire technique, FedaPay étant
+        au sens réglementaire. Donia agit comme intermédiaire technique, FedaPay étant
         l&rsquo;établissement de monnaie électronique agréé pour les opérations financières.
       </p>
 
@@ -184,7 +184,7 @@ export default function CGUPage() {
       </p>
       <h3>9.2 Suspension ou résiliation par NOVEKAI LTD</h3>
       <p>
-        Doniia se réserve le droit de suspendre ou de supprimer un compte en cas de manquement grave
+        Donia se réserve le droit de suspendre ou de supprimer un compte en cas de manquement grave
         aux CGU, de comportement frauduleux, d&rsquo;inactivité prolongée, ou pour toute raison
         sérieuse et légitime, sans préavis si la gravité l&rsquo;exige.
       </p>
@@ -209,13 +209,13 @@ export default function CGUPage() {
 
       <h2>Article 12 — Responsabilité</h2>
       <p>
-        Doniia s&rsquo;engage à fournir le Service avec diligence et selon les règles de
+        Donia s&rsquo;engage à fournir le Service avec diligence et selon les règles de
         l&rsquo;art. Toutefois, NOVEKAI LTD ne peut être tenue responsable des dommages indirects
         (perte de données, perte d&rsquo;opportunité, préjudice moral, etc.) liés à l&rsquo;utilisation
         du Service, sauf cas de faute lourde ou intentionnelle.
       </p>
       <p>
-        Doniia ne garantit pas l&rsquo;absence d&rsquo;interruption ou d&rsquo;erreur du Service. En
+        Donia ne garantit pas l&rsquo;absence d&rsquo;interruption ou d&rsquo;erreur du Service. En
         cas d&rsquo;indisponibilité, l&rsquo;Éditeur s&rsquo;efforce de rétablir le Service dans les
         meilleurs délais.
       </p>

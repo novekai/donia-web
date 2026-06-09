@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 // Sitemap declare a Google les pages publiques + leur frequence de mise a jour.
 // Indispensable pour que Google indexe rapidement le site avec les bons mots-cles
-// ("Donia" et "Doniia" — voir layout.tsx pour les metadata + structured data).
+// (marque "Donia" sur domaine doniia.com — voir layout.tsx).
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://doniia.com";
   const now = new Date();

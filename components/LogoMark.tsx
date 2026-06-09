@@ -1,4 +1,4 @@
-// LogoMark — vraie marque Doniia (transcrite du SVG officiel de la maquette).
+// LogoMark — marque Donia (transcrite du SVG officiel de la maquette).
 type Props = { size?: number; className?: string };
 
 export function LogoMark({ size = 40, className }: Props) {

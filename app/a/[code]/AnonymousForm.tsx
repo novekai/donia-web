@@ -197,7 +197,7 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
               </h2>
               <p className="text-[var(--color-ink-2)] text-base leading-relaxed mb-8">
                 Ton message anonyme a été livré. <strong>{firstName}</strong> le verra dans son app
-                Doniia.
+                Donia.
               </p>
 
               <div
@@ -212,10 +212,10 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
                   Reçois des messages anonymes de tes proches
                 </h3>
                 <p className="text-sm text-white/80 mb-5">
-                  Crée ton lien anonyme depuis l&rsquo;application Doniia.
+                  Crée ton lien anonyme depuis l&rsquo;application Donia.
                 </p>
                 <Link href="/#download" className="btn bg-white text-[var(--color-indigo-deep)] !w-full">
-                  Télécharger Doniia
+                  Télécharger Donia
                 </Link>
               </div>
 
@@ -232,7 +232,7 @@ export function AnonymousForm({ code, firstName, avatarUrl, prompt, apiBase }: P
         <p className="mt-6 text-center text-xs text-white/70">
           En envoyant ce message, tu acceptes la{" "}
           <Link href="/charte-moderation" className="underline underline-offset-2 hover:text-white">
-            charte Doniia
+            charte Donia
           </Link>
           . Tout abus pourra être signalé.
         </p>

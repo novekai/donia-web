@@ -74,7 +74,7 @@ export function SectionDemo() {
             En vidéo
           </p>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight">
-            Doniia, <em className="text-[var(--color-coral)]">en 1 minute</em>
+            Donia, <em className="text-[var(--color-coral)]">en 1 minute</em>
           </h2>
           <p className="mt-4 text-base text-[var(--color-ink-2)] max-w-2xl mx-auto">
             Regarde comment offrir un cadeau, le recevoir, et le convertir en argent — sur les

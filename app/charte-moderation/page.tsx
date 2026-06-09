@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Charte de modération — Doniia",
+  title: "Charte de modération — Donia",
   description:
-    "Règles de comportement attendues sur Doniia, contenus interdits, processus de modération, sanctions et recours.",
+    "Règles de comportement attendues sur Donia, contenus interdits, processus de modération, sanctions et recours.",
 };
 
 export default function ChartePage() {
@@ -12,14 +12,14 @@ export default function ChartePage() {
     <LegalLayout category="Communauté" title="Charte de modération">
       <h2>Préambule</h2>
       <p>
-        Doniia est une plateforme dédiée à l&rsquo;amour, au don et au partage. Pour que cet espace
+        Donia est une plateforme dédiée à l&rsquo;amour, au don et au partage. Pour que cet espace
         reste un lieu sûr, bienveillant et respectueux pour tous, NOVEKAI LTD met en place une
         politique de modération rigoureuse. La présente Charte définit les règles de comportement
         attendues, les contenus interdits, les processus de modération et les sanctions applicables.
       </p>
       <p>
         Cette Charte s&rsquo;applique à <strong>tous les utilisateurs</strong> et à{" "}
-        <strong>tous les contenus</strong> diffusés sur Doniia : messages anonymes, profils, photos,
+        <strong>tous les contenus</strong> diffusés sur Donia : messages anonymes, profils, photos,
         cartes personnalisées, commentaires, signalements, etc.
       </p>
 
@@ -34,7 +34,7 @@ export default function ChartePage() {
 
       <h2>2. Contenus et comportements strictement interdits</h2>
       <p>
-        Les contenus et comportements suivants sont strictement interdits sur Doniia et entraînent
+        Les contenus et comportements suivants sont strictement interdits sur Donia et entraînent
         une suppression immédiate et une sanction du compte :
       </p>
 
@@ -99,7 +99,7 @@ export default function ChartePage() {
       <h2>3. Cas spécifique : messages anonymes</h2>
       <p>
         La fonctionnalité <strong>Anonymes</strong> permet aux visiteurs d&rsquo;envoyer des messages
-        anonymes à un utilisateur Doniia. L&rsquo;anonymat ne donne aucun droit d&rsquo;écarter les
+        anonymes à un utilisateur Donia. L&rsquo;anonymat ne donne aucun droit d&rsquo;écarter les
         règles de cette Charte. Tout message anonyme reste soumis à modération.
       </p>
       <ul>
@@ -128,7 +128,7 @@ export default function ChartePage() {
       <h2>5. Processus de modération</h2>
       <h3>5.1 Modération automatique</h3>
       <p>
-        Doniia utilise des outils d&rsquo;analyse automatique (filtres de mots, classifieurs IA,
+        Donia utilise des outils d&rsquo;analyse automatique (filtres de mots, classifieurs IA,
         détection d&rsquo;images) pour filtrer en temps réel les contenus problématiques. La précision
         de ces outils est continuellement améliorée.
       </p>
@@ -169,13 +169,13 @@ export default function ChartePage() {
       <p>
         Un utilisateur sanctionné peut contester la décision en écrivant à{" "}
         <a href="mailto:contact@doniia.com">contact@doniia.com</a> dans un délai de{" "}
-        <strong>30 jours</strong>, en expliquant les raisons de sa contestation. Doniia s&rsquo;engage
+        <strong>30 jours</strong>, en expliquant les raisons de sa contestation. Donia s&rsquo;engage
         à examiner la demande dans un délai de <strong>14 jours</strong> et à motiver sa réponse.
       </p>
 
       <h2>8. Transparence et amélioration continue</h2>
       <p>
-        Doniia publie régulièrement des rapports de transparence (nombre de signalements, contenus
+        Donia publie régulièrement des rapports de transparence (nombre de signalements, contenus
         modérés, sanctions appliquées) afin d&rsquo;informer la communauté sur l&rsquo;application de
         cette Charte.
       </p>
@@ -187,7 +187,7 @@ export default function ChartePage() {
 
       <h2>9. Responsabilité des contenus</h2>
       <p>
-        Chaque utilisateur reste responsable des contenus qu&rsquo;il publie sur Doniia. NOVEKAI LTD
+        Chaque utilisateur reste responsable des contenus qu&rsquo;il publie sur Donia. NOVEKAI LTD
         n&rsquo;est pas l&rsquo;auteur des contenus générés par les utilisateurs et agit en tant
         qu&rsquo;<strong>hébergeur</strong> au sens des réglementations applicables.
       </p>

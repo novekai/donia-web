@@ -19,10 +19,10 @@ export default function NotFound() {
           <p className="text-[var(--color-ink-2)] text-base mb-8 leading-relaxed">
             Ce lien anonyme a peut-être été supprimé, suspendu ou n&rsquo;a jamais existé.
             <br />
-            Tu peux créer le tien depuis l&rsquo;app Doniia.
+            Tu peux créer le tien depuis l&rsquo;app Donia.
           </p>
           <Link href="/#download" className="btn btn-primary w-full !py-4">
-            Télécharger Doniia
+            Télécharger Donia
           </Link>
         </div>
       </div>

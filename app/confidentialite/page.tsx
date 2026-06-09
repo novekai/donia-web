@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Doniia",
+  title: "Politique de confidentialité — Donia",
   description:
-    "Comment Doniia (NOVEKAI LTD) collecte, utilise et protège vos données personnelles. Conformité RGPD et législation béninoise.",
+    "Comment Donia (NOVEKAI LTD) collecte, utilise et protège vos données personnelles. Conformité RGPD et législation béninoise.",
 };
 
 export default function ConfidentialitePage() {
@@ -15,10 +15,10 @@ export default function ConfidentialitePage() {
     >
       <h2>1. Notre engagement</h2>
       <p>
-        NOVEKAI LTD (ci-après « Doniia » ou « nous ») accorde une importance fondamentale à la
+        NOVEKAI LTD (ci-après « Donia » ou « nous ») accorde une importance fondamentale à la
         protection de la vie privée et des données personnelles de ses utilisateurs. La présente
         Politique de confidentialité décrit comment nous collectons, utilisons, partageons et
-        protégeons vos données lorsque vous utilisez le service Doniia.
+        protégeons vos données lorsque vous utilisez le service Donia.
       </p>
       <p>
         Nous nous engageons à respecter la législation béninoise en matière de protection des données

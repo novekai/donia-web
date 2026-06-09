@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Vente — Doniia",
-  description: "CGV de Doniia (NOVEKAI LTD) — vente de cartes cadeaux numériques, paiements FedaPay, retraits Mobile Money.",
+  title: "Conditions Générales de Vente — Donia",
+  description: "CGV de Donia (NOVEKAI LTD) — vente de cartes cadeaux numériques, paiements FedaPay, retraits Mobile Money.",
 };
 
 export default function CGVPage() {
   return (
     <LegalLayout category="Vente" title="Conditions Générales de Vente">
       <h2>Article 1 — Vendeur</h2>
-      <p>Les cartes cadeaux numériques proposées sur le service Doniia sont vendues par :</p>
+      <p>Les cartes cadeaux numériques proposées sur le service Donia sont vendues par :</p>
       <ul>
         <li>
           <strong>NOVEKAI LTD</strong>, Private company limited by shares, immatriculée à Companies House
@@ -24,7 +24,7 @@ export default function CGVPage() {
       <h2>Article 2 — Champ d&rsquo;application</h2>
       <p>
         Les présentes Conditions Générales de Vente (ci-après <strong>CGV</strong>) régissent toute
-        vente de carte cadeau numérique effectuée via le service Doniia (site et application). Elles
+        vente de carte cadeau numérique effectuée via le service Donia (site et application). Elles
         s&rsquo;appliquent à l&rsquo;exclusion de toutes autres conditions, et complètent les{" "}
         <a href="/cgu">Conditions Générales d&rsquo;Utilisation</a> (CGU).
       </p>
@@ -32,7 +32,7 @@ export default function CGVPage() {
       <h2>Article 3 — Produits et services proposés</h2>
       <h3>3.1 Cartes cadeaux numériques</h3>
       <p>
-        Doniia propose à la vente des cartes cadeaux numériques de différents thèmes : anniversaire,
+        Donia propose à la vente des cartes cadeaux numériques de différents thèmes : anniversaire,
         mariage, Saint-Valentin, condoléances, « Je t&rsquo;aime », « Bonjour », et autres occasions
         disponibles dans le catalogue.
       </p>
@@ -42,7 +42,7 @@ export default function CGVPage() {
       </p>
       <h3>3.2 Bons d&rsquo;achat partenaires</h3>
       <p>
-        Doniia peut proposer également des bons d&rsquo;achat valables chez des partenaires
+        Donia peut proposer également des bons d&rsquo;achat valables chez des partenaires
         commerciaux (ex. GoShop). Les conditions spécifiques d&rsquo;utilisation de ces bons sont
         détaillées au moment de l&rsquo;achat.
       </p>
@@ -59,16 +59,16 @@ export default function CGVPage() {
         Les paiements sont effectués via le prestataire de paiement <strong>FedaPay</strong>,
         établissement de monnaie électronique agréé par la BCEAO. Les moyens de paiement acceptés
         incluent : Mobile Money (MTN, Moov, Orange Money), cartes bancaires (Visa, Mastercard), et
-        solde Doniia (lorsque suffisant).
+        solde Donia (lorsque suffisant).
       </p>
       <p>
-        Toutes les transactions sont sécurisées par le protocole SSL/TLS. Doniia n&rsquo;a pas
+        Toutes les transactions sont sécurisées par le protocole SSL/TLS. Donia n&rsquo;a pas
         connaissance des données bancaires complètes des acheteurs.
       </p>
       <h3>4.3 Frais</h3>
       <p>
         Les frais de service éventuels (frais de paiement, frais de retrait Mobile Money) sont
-        indiqués avant validation de la commande. Doniia s&rsquo;engage à la transparence totale sur
+        indiqués avant validation de la commande. Donia s&rsquo;engage à la transparence totale sur
         ces frais.
       </p>
 
@@ -94,7 +94,7 @@ export default function CGVPage() {
         indicatif de quelques minutes après validation du paiement.
       </p>
       <p>
-        Doniia ne peut être tenue responsable d&rsquo;un retard ou d&rsquo;une non-réception lié à une
+        Donia ne peut être tenue responsable d&rsquo;un retard ou d&rsquo;une non-réception lié à une
         adresse e-mail erronée saisie par l&rsquo;acheteur, ou à un classement de l&rsquo;email dans
         les spams du destinataire.
       </p>
@@ -103,12 +103,12 @@ export default function CGVPage() {
       <h3>7.1 Réception et activation</h3>
       <p>
         Le destinataire active sa carte en cliquant sur le lien reçu par email puis en suivant les
-        instructions (connexion ou création de compte Doniia).
+        instructions (connexion ou création de compte Donia).
       </p>
       <h3>7.2 Conversion en solde</h3>
       <p>
         La carte reçue peut être convertie <strong>gratuitement</strong> en solde monétaire (FCFA)
-        sur le compte Doniia du destinataire.
+        sur le compte Donia du destinataire.
       </p>
       <h3>7.3 Retrait du solde</h3>
       <p>
@@ -132,12 +132,12 @@ export default function CGVPage() {
 
       <h2>Article 9 — Validité et expiration des cartes</h2>
       <p>
-        Les cartes cadeaux Doniia sont valables <strong>24 mois</strong> à compter de leur date
+        Les cartes cadeaux Donia sont valables <strong>24 mois</strong> à compter de leur date
         d&rsquo;achat. Au-delà de ce délai, une carte non réclamée ou non convertie pourra être
         désactivée, sans donner droit à remboursement.
       </p>
       <p>
-        Avant expiration, Doniia s&rsquo;engage à envoyer des notifications de rappel au destinataire
+        Avant expiration, Donia s&rsquo;engage à envoyer des notifications de rappel au destinataire
         indiqué.
       </p>
 
@@ -145,7 +145,7 @@ export default function CGVPage() {
       <h3>10.1 Cas de remboursement</h3>
       <p>Un remboursement peut être accordé dans les cas suivants :</p>
       <ul>
-        <li>Erreur technique imputable à Doniia.</li>
+        <li>Erreur technique imputable à Donia.</li>
         <li>Double paiement.</li>
         <li>Impossibilité totale de livraison persistante.</li>
       </ul>
@@ -165,12 +165,12 @@ export default function CGVPage() {
 
       <h2>Article 11 — Garanties et responsabilité</h2>
       <p>
-        Doniia s&rsquo;engage à fournir un service conforme à la description faite dans le catalogue.
+        Donia s&rsquo;engage à fournir un service conforme à la description faite dans le catalogue.
         La responsabilité de NOVEKAI LTD se limite à la valeur nominale de la carte achetée.
       </p>
       <p>
         NOVEKAI LTD ne peut être tenue responsable des dommages indirects (perte d&rsquo;opportunité,
-        préjudice moral, etc.) liés à l&rsquo;utilisation des cartes Doniia.
+        préjudice moral, etc.) liés à l&rsquo;utilisation des cartes Donia.
       </p>
 
       <h2>Article 12 — Lutte contre la fraude</h2>

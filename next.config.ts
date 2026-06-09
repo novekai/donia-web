@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
   // évite les "Duplicata" dans Google Search Console.
   trailingSlash: false,
 
-  // Redirige /page/ → /page en 308 (permanent + preserve method).
-  // Si Google a deja indexe certaines URL avec trailing slash, il suivra le 308.
+  // Redirects 301 permanents : permettent a Google de transferer le "juice" SEO
+  // des anciennes URLs vers les nouvelles, et de sortir les 404 de l'index.
   async redirects() {
     return [
-      // Redirige les anciens chemins WWW vers la racine (canonical = doniia.com)
+      // 1. WWW vers apex (canonical doniia.com)
       {
         source: "/:path*",
         has: [
@@ -19,6 +19,18 @@ const nextConfig: NextConfig = {
           },
         ],
         destination: "https://doniia.com/:path*",
+        permanent: true,
+      },
+      // 2. Vieille convention HTML statique
+      {
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
+      // 3. URL jamais existee (404 historique) -> homepage
+      {
+        source: "/store",
+        destination: "/",
         permanent: true,
       },
     ];

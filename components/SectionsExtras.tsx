@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, MapPin, ChevronDown } from "lucide-react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://donia-api-production.up.railway.app";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://donia-backend-production.up.railway.app";
 
 // ─────────────── À PROPOS ───────────────
 

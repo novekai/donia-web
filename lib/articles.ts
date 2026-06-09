@@ -1,7 +1,7 @@
 // Public article fetchers used by the website (homepage + /blog + /blog/[slug]).
 // Server-side fetch so the marketing pages stay statically generated when possible.
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://donia-api-production.up.railway.app";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://donia-backend-production.up.railway.app";
 
 export type BlogArticle = {
   slug: string;

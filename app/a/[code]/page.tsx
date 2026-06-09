@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AnonymousForm } from "./AnonymousForm";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://donia-api-production.up.railway.app";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://donia-backend-production.up.railway.app";
 
 type RecipientResponse = {
   link: {

@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, Smartphone, Sparkles, Send, ChevronDown } from "lucide-react";
 
 const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE ?? "https://donia-backend-production.up.railway.app";
+  process.env.NEXT_PUBLIC_API_BASE ?? "https://donia-api-production.up.railway.app";
 
 const STORAGE_KEY = "donia_newsletter_v2";
 const DELAY_MS = 5000;

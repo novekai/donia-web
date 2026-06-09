@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE ?? "https://donia-backend-production.up.railway.app";
+  process.env.NEXT_PUBLIC_API_BASE ?? "https://donia-api-production.up.railway.app";
 
 function getOrCreateSessionId(): string {
   if (typeof window === "undefined") return "";

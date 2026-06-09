@@ -3,6 +3,7 @@ import { Fraunces, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SiteOverlays } from "@/components/SiteOverlays";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <SiteOverlays />
       </body>
     </html>
   );

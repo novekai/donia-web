@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // Pages anonymes : pas indexees (vie privee des destinataires)
-        disallow: ["/a/"],
+        disallow: ["/a/", "/c/"],
       },
     ],
     sitemap: "https://doniia.com/sitemap.xml",
